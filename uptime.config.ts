@@ -35,15 +35,15 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare/1.0',
       },
     },
-    // RadioWay 应用监控
+    // RadioWay 应用监控（需要登录认证，返回 401 表示服务器在线）
     {
       id: 'radioway_app',
       name: 'RadioWay App',
       method: 'GET',
       target: 'http://app.radioway.cn/',
-      tooltip: 'RadioWay 应用',
+      tooltip: 'RadioWay 应用（需要登录）',
       statusPageLink: 'http://app.radioway.cn/',
-      expectedCodes: [200, 301, 302, 304],
+      expectedCodes: [200, 301, 302, 304, 401],
       timeout: 10000,
       headers: {
         'User-Agent': 'Uptimeflare/1.0',
