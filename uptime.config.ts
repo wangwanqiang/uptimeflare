@@ -49,6 +49,34 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare/1.0',
       },
     },
+    // RadioWay www3 API 文档
+    {
+      id: 'radioway_www3_swagger',
+      name: 'RadioWay WWW3 API',
+      method: 'GET',
+      target: 'https://www3.radioway.cn:3002/swagger/index.html',
+      tooltip: 'WWW3 节点 API 文档',
+      statusPageLink: 'https://www3.radioway.cn:3002/swagger/index.html',
+      expectedCodes: [200, 301, 302, 304],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare/1.0',
+      },
+    },
+    // RadioWay volc API 文档
+    {
+      id: 'radioway_volc_swagger',
+      name: 'RadioWay Volc API',
+      method: 'GET',
+      target: 'http://volc.radioway.cn:3002/swagger/index.html',
+      tooltip: '火山引擎节点 API 文档',
+      statusPageLink: 'http://volc.radioway.cn:3002/swagger/index.html',
+      expectedCodes: [200, 301, 302, 304],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare/1.0',
+      },
+    },
   ],
   // 通知配置 - 如需配置通知请取消注释并修改 webhook 设置
   // notification: {
