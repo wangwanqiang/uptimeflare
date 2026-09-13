@@ -9,8 +9,9 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
  * 状态页面配置 - 定义页面标题、头部链接等外观设置
  */
 const pageConfig: PageConfig = {
-  title: "Uptime Status Page",
+  title: "服务状态",
   links: [
+    { link: 'https://wanqiang.wang', label: '首页' },
     { link: 'https://github.com/', label: 'GitHub' },
   ],
 }
@@ -20,28 +21,19 @@ const pageConfig: PageConfig = {
  */
 const workerConfig: WorkerConfig = {
   monitors: [
-    // 示例：监控 Cloudflare 官网（可替换为您自己的监控目标）
+    // 个人网站监控
     {
-      id: 'cloudflare_www',
-      name: 'Cloudflare Website',
+      id: 'wanqiang_wang',
+      name: '个人网站',
       method: 'GET',
-      target: 'https://www.cloudflare.com',
-      tooltip: 'Cloudflare 官方网站',
-      expectedCodes: [200],
+      target: 'https://wanqiang.wang',
+      tooltip: 'wanqiang.wang 个人网站',
+      statusPageLink: 'https://wanqiang.wang',
+      expectedCodes: [200, 301, 302],
       timeout: 10000,
       headers: {
         'User-Agent': 'Uptimeflare/1.0',
       },
-    },
-    // 示例：监控 GitHub 首页
-    {
-      id: 'github_www',
-      name: 'GitHub Website',
-      method: 'GET',
-      target: 'https://github.com',
-      tooltip: 'GitHub 官方网站',
-      expectedCodes: [200, 301, 302],
-      timeout: 10000,
     },
   ],
   // 通知配置 - 如需配置通知请取消注释并修改 webhook 设置
