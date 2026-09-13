@@ -35,6 +35,20 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare/1.0',
       },
     },
+    // RadioWay 应用监控
+    {
+      id: 'radioway_app',
+      name: 'RadioWay App',
+      method: 'GET',
+      target: 'http://app.radioway.cn/',
+      tooltip: 'RadioWay 应用',
+      statusPageLink: 'http://app.radioway.cn/',
+      expectedCodes: [200, 301, 302, 304],
+      timeout: 10000,
+      headers: {
+        'User-Agent': 'Uptimeflare/1.0',
+      },
+    },
   ],
   // 通知配置 - 如需配置通知请取消注释并修改 webhook 设置
   // notification: {

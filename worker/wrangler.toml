@@ -3,7 +3,26 @@ main = "src/index.ts"
 compatibility_date = "2025-04-02"
 compatibility_flags = [ "nodejs_compat" ]
 
+# Enable observability
+[observability]
+enabled = true
+logs.enabled = true
+logs.invocation_logs = true
+
+# Durable Objects binding
+[[durable_objects.bindings]]
+name = "REMOTE_CHECKER_DO"
+class_name = "RemoteChecker"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RemoteChecker"]
+
+# Cron trigger - run every minute
+[triggers]
+crons = ["* * * * *"]
+
 [[d1_databases]]
 binding = "UPTIMEFLARE_D1"
 database_name = "uptimeflare_d1"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "31eff0fc-6683-4dc9-ac9d-7137a15d3c6a"
